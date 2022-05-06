@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menu">
+
+    <fragment
+        android:id="@+id/correctAction"
+        android:name="com.example.awbw.ui.main.CorrectAction"
+        android:label="correct_action_fragment"
+        tools:layout="@layout/correct_action_fragment">
+        <argument
+            android:name="screenTitle"
+            app:argType="string" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_correctAction_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu"
+        android:name="com.example.awbw.MenuFragment"
+        android:label="manu_fragment"
+        tools:layout="@layout/manu_fragment">
+        <action
+            android:id="@+id/action_menu_to_test1Fragment"
+            app:destination="@id/test1Fragment" />
+        <action
+            android:id="@+id/action_menu_to_test2Fragment"
+            app:destination="@id/test2Fragment" />
+        <action
+            android:id="@+id/action_menu_to_test3Fragment"
+            app:destination="@id/test3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/test1Fragment"
+        android:name="com.example.awbw.ui.main.Test1Fragment"
+        android:label="test1_fragment"
+        tools:layout="@layout/test1_fragment">
+        <action
+            android:id="@+id/action_test1Fragment_to_correctAction"
+            app:destination="@id/correctAction" />
+    </fragment>
+    <fragment
+        android:id="@+id/test2Fragment"
+        android:name="com.example.awbw.ui.main.Test2Fragment"
+        android:label="test2_fragment"
+        tools:layout="@layout/test2_fragment">
+        <action
+            android:id="@+id/action_test2Fragment_to_correctAction"
+            app:destination="@id/correctAction" />
+    </fragment>
+    <fragment
+        android:id="@+id/test3Fragment"
+        android:name="com.example.awbw.ui.main.Test3Fragment"
+        android:label="test3_fragment"
+        tools:layout="@layout/test3_fragment">
+        <action
+            android:id="@+id/action_test3Fragment_to_correctAction"
+            app:destination="@id/correctAction" />
+    </fragment>
+</navigation>
